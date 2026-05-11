@@ -1,0 +1,16 @@
+# Regenerable scrape caches (rebuilt by scrape.py)
+cache/
+
+# Logs
+*.log
+
+# Reference copies of external pages
+reference_*.html
+
+# Python bytecode
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db
