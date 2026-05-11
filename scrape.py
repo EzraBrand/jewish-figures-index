@@ -40,7 +40,7 @@ SEEDS = [
     # Biblical (Hebrew)
     {"lang": "he", "cat": "קטגוריה:אישים בתנ\"ך",                 "label": "Biblical",            "expand": True},
     {"lang": "he", "cat": "קטגוריה:אישים בתורה",                  "label": "Biblical"},
-    {"lang": "he", "cat": "קטגוריה:נביאים",                       "label": "Biblical prophets"},
+    {"lang": "he", "cat": "קטגוריה:נביאים",                       "label": "Biblical"},
     {"lang": "he", "cat": "קטגוריה:מלכי ישראל",                   "label": "Biblical kings"},
     {"lang": "he", "cat": "קטגוריה:מלכי יהודה",                   "label": "Biblical kings"},
     # Talmudic (Tannaim — Mishnaic era, ~10–220 CE)
