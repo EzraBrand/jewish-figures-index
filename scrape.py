@@ -176,6 +176,13 @@ NON_NAME_TITLES = {
     # Misc. individual removals:
     "Nahman Ktufa",
     "נביא עיוור",   # "Blind prophet" — a phrase / role label, not a personal name
+    "Bar Yohai",   # Modern Israeli moshav named after Shimon bar Yochai (the sage himself is still in the index)
+    "Tavi (slave)",  # Canaanite slave of Rabban Gamliel — non-Israelite
+    # Non-Israelite biblical figures missed in the earlier pass:
+    "Cozbi",        # Midianite princess (Numbers 25)
+    "Debir",        # Canaanite king of Eglon (Joshua 10) / disambiguation page
+    "Efron",        # Efron the Hittite (Genesis 23)
+    "Elioud",       # Non-canonical figure from Aramaic/extra-biblical Nephilim genealogy
 }
 
 # Regex patterns matched against the title to reject likely non-names.
