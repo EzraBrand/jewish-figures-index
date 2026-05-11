@@ -14,18 +14,18 @@ Companion to the [Talmud NLP indexer glossary](https://ezrabrand.github.io/talmu
 
 ## What's in the index
 
-The published table currently has **848 deduped entries**, distributed across the following category buckets:
+The published table currently has **846 deduped entries**, distributed across the following category buckets:
 
 | Category | Rows |
 | --- | ---: |
-| Biblical | 426 |
+| Biblical | 424 |
 | Tannaim | 231 |
 | Medieval | 70 |
 | Amoraim | 67 |
 | Geonim | 52 |
 | Biblical kings | 41 |
 
-(Some entries belong to more than one bucket, so column sums slightly exceed 848.)
+(Some entries belong to more than one bucket, so column sums slightly exceed 846.)
 
 Each row contains:
 

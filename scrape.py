@@ -140,8 +140,8 @@ NON_NAME_TITLES = {
     "Nahash of Ammon", "Hanun", "Shobi", "Baalis",
     # Amorite kings:
     "Sihon", "Og",
-    # Persian official from Ezra:
-    "Tattenai",
+    # Persian officials / eunuchs from Ezra / Esther:
+    "Tattenai", "Abagtha",
     # Edomite:
     "Hadad (Bible)", "Hadad the Edomite",
     # Aramean / Syrian:
@@ -177,6 +177,8 @@ NON_NAME_TITLES = {
     "Beit Gamliel",
     # Modern Israeli religious-Zionist youth movement, not a Tannaitic figure:
     "Bnei Akiva",
+    # Temple-officer title (treasurer), not a personal name — sometimes appears that way in cats:
+    "Amarkol",
     # Misc. individual removals:
     "Nahman Ktufa",
     "נביא עיוור",   # "Blind prophet" — a phrase / role label, not a personal name
