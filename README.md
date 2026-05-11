@@ -14,12 +14,25 @@ Companion to the [Talmud NLP indexer glossary](https://ezrabrand.github.io/talmu
 
 ## What's in the index
 
-The published table currently has **~915 deduped entries**. Each row contains:
+The published table currently has **908 deduped entries**, distributed across the following category buckets:
+
+| Category | Rows |
+| --- | ---: |
+| Biblical | 460 |
+| Tannaim | 257 |
+| Medieval | 70 |
+| Amoraim | 67 |
+| Geonim | 52 |
+| Biblical kings | 41 |
+
+(Some entries belong to more than one bucket, so column sums slightly exceed 908.)
+
+Each row contains:
 
 | Column | Source |
 | --- | --- |
 | Term (English) | Wikidata label, or English Wikipedia page title |
-| Wiki Category | Source bucket(s): `Biblical (EN)`, `Biblical (HE)`, `Tannaim (EN/HE)`, `Amoraim (EN/HE)`, `Geonim (EN/HE)`, `Rishonim (EN)`, `Medieval Jewish (EN)`, etc. |
+| Category | Source bucket(s): `Biblical`, `Biblical kings`, `Tannaim`, `Amoraim`, `Geonim`, `Medieval` |
 | Wikipedia EN | English Wikipedia URL (via Wikidata sitelinks) |
 | Wikipedia HE | Hebrew Wikipedia URL (via Wikidata sitelinks) |
 | Wikidata ID | Q-ID, links to wikidata.org |
@@ -29,7 +42,7 @@ The published table currently has **~915 deduped entries**. Each row contains:
 | Name(s) of Teacher(s) | Wikidata P1066 |
 | Name(s) of Student(s) | Wikidata P802 |
 
-Entries are deduped by Wikidata Q-ID — a figure appearing in both English and Hebrew Wikipedia categories produces a single row with both `Wiki Category` buckets joined by `; `.
+Entries are deduped by Wikidata Q-ID — a figure appearing in both English and Hebrew Wikipedia categories produces a single row with both `Category` buckets joined by `; `.
 
 ## Scope and filtering
 
