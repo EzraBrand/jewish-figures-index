@@ -33,32 +33,32 @@ os.makedirs(CACHE_DIR, exist_ok=True)
 # as an additional source category that inherits the parent's label).
 SEEDS = [
     # Biblical (English) — expand "Hebrew Bible people" so we pick up the Book-by-book subcats
-    {"lang": "en", "cat": "Category:Hebrew Bible people",          "label": "Biblical (EN)",            "expand": True},
-    {"lang": "en", "cat": "Category:Torah people",                 "label": "Biblical (EN)"},
-    {"lang": "en", "cat": "Category:Books of Samuel people",       "label": "Biblical (EN)"},
-    {"lang": "en", "cat": "Category:Books of Kings people",        "label": "Biblical (EN)"},
+    {"lang": "en", "cat": "Category:Hebrew Bible people",          "label": "Biblical",            "expand": True},
+    {"lang": "en", "cat": "Category:Torah people",                 "label": "Biblical"},
+    {"lang": "en", "cat": "Category:Books of Samuel people",       "label": "Biblical"},
+    {"lang": "en", "cat": "Category:Books of Kings people",        "label": "Biblical"},
     # Biblical (Hebrew)
-    {"lang": "he", "cat": "קטגוריה:אישים בתנ\"ך",                 "label": "Biblical (HE)",            "expand": True},
-    {"lang": "he", "cat": "קטגוריה:אישים בתורה",                  "label": "Biblical (HE)"},
-    {"lang": "he", "cat": "קטגוריה:נביאים",                       "label": "Biblical prophets (HE)"},
-    {"lang": "he", "cat": "קטגוריה:מלכי ישראל",                   "label": "Biblical kings (HE)"},
-    {"lang": "he", "cat": "קטגוריה:מלכי יהודה",                   "label": "Biblical kings (HE)"},
+    {"lang": "he", "cat": "קטגוריה:אישים בתנ\"ך",                 "label": "Biblical",            "expand": True},
+    {"lang": "he", "cat": "קטגוריה:אישים בתורה",                  "label": "Biblical"},
+    {"lang": "he", "cat": "קטגוריה:נביאים",                       "label": "Biblical prophets"},
+    {"lang": "he", "cat": "קטגוריה:מלכי ישראל",                   "label": "Biblical kings"},
+    {"lang": "he", "cat": "קטגוריה:מלכי יהודה",                   "label": "Biblical kings"},
     # Talmudic (Tannaim — Mishnaic era, ~10–220 CE)
-    {"lang": "en", "cat": "Category:Tannaim",                      "label": "Tannaim (EN)",             "expand": True},
-    {"lang": "he", "cat": "קטגוריה:תנאים",                        "label": "Tannaim (HE)",             "expand": True},
-    {"lang": "en", "cat": "Category:Mishnah rabbis",               "label": "Tannaim (EN)"},
+    {"lang": "en", "cat": "Category:Tannaim",                      "label": "Tannaim",             "expand": True},
+    {"lang": "he", "cat": "קטגוריה:תנאים",                        "label": "Tannaim",             "expand": True},
+    {"lang": "en", "cat": "Category:Mishnah rabbis",               "label": "Tannaim"},
     # Talmudic (Amoraim — ~220–500 CE)
-    {"lang": "en", "cat": "Category:Amoraim",                      "label": "Amoraim (EN)",             "expand": True},
-    {"lang": "he", "cat": "קטגוריה:אמוראים",                      "label": "Amoraim (HE)",             "expand": True},
+    {"lang": "en", "cat": "Category:Amoraim",                      "label": "Amoraim",             "expand": True},
+    {"lang": "he", "cat": "קטגוריה:אמוראים",                      "label": "Amoraim",             "expand": True},
     # Geonim (~600–1000 CE)
-    {"lang": "en", "cat": "Category:Geonim",                       "label": "Geonim (EN)"},
-    {"lang": "he", "cat": "קטגוריה:גאונים",                       "label": "Geonim (HE)"},
+    {"lang": "en", "cat": "Category:Geonim",                       "label": "Geonim"},
+    {"lang": "he", "cat": "קטגוריה:גאונים",                       "label": "Geonim"},
     # Rishonim (~1000–1500 CE)
-    {"lang": "en", "cat": "Category:Rishonim",                     "label": "Rishonim (EN)",            "expand": True},
-    {"lang": "he", "cat": "קטגוריה:ראשונים",                      "label": "Rishonim (HE)",            "expand": True},
+    {"lang": "en", "cat": "Category:Rishonim",                     "label": "Rishonim",            "expand": True},
+    {"lang": "he", "cat": "קטגוריה:ראשונים",                      "label": "Rishonim",            "expand": True},
     # Medieval Jewish theologians — expand to get century-by-century subcats
-    {"lang": "en", "cat": "Category:Medieval Jewish theologians",  "label": "Medieval Jewish (EN)",     "expand": True},
-    {"lang": "en", "cat": "Category:Medieval rabbis",              "label": "Medieval Jewish (EN)"},
+    {"lang": "en", "cat": "Category:Medieval Jewish theologians",  "label": "Medieval Jewish",     "expand": True},
+    {"lang": "en", "cat": "Category:Medieval rabbis",              "label": "Medieval Jewish"},
 ]
 
 # Explicit blocklist of titles that aren't personal names (events, books, lists, tribes, places, themes).
@@ -173,6 +173,9 @@ NON_NAME_TITLES = {
     "Beit Gamliel",
     # Modern Israeli religious-Zionist youth movement, not a Tannaitic figure:
     "Bnei Akiva",
+    # Misc. individual removals:
+    "Nahman Ktufa",
+    "נביא עיוור",   # "Blind prophet" — a phrase / role label, not a personal name
 }
 
 # Regex patterns matched against the title to reject likely non-names.
@@ -553,7 +556,7 @@ def main():
     # ---------- Phase 6: write CSV ----------
     out_csv = os.path.join(HERE, "names_extended.csv")
     fieldnames = [
-        "wiki_category", "term", "hebrew_term",
+        "category", "term", "hebrew_term",
         "wikipedia_en", "wikipedia_he", "wikidata_id",
         "father", "student_of", "student",
         "date_of_birth", "place_of_birth",
@@ -595,7 +598,7 @@ def main():
         date_of_death = "; ".join(extract_claim_times(ent, TIME_PROPS["date_of_death"]))
 
         rows.append({
-            "wiki_category": "; ".join(sorted(bucket["labels"])),
+            "category": "; ".join(sorted(bucket["labels"])),
             "term": term,
             "hebrew_term": hebrew_term,
             "wikipedia_en": sitelink_url(ent, "enwiki"),
