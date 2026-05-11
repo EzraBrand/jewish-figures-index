@@ -169,8 +169,10 @@ NON_NAME_TITLES = {
     "2021 Meron crowd crush", "Askinu L'seudasa", "Birkat haMinim",
     # Classical / canonical texts (not personal names):
     "Mishnah", "Tosefta", "Talmud", "Gemara", "Halakha",
-    # Schools / dynasties / collectives (not a single individual):
-    "Bnei Bathyra", "Hillel and Shammai",
+    # Modern Israeli moshav, not a Tannaitic figure:
+    "Beit Gamliel",
+    # Modern Israeli religious-Zionist youth movement, not a Tannaitic figure:
+    "Bnei Akiva",
 }
 
 # Regex patterns matched against the title to reject likely non-names.
@@ -192,8 +194,6 @@ NON_NAME_PATTERNS = [
     _re_for_patterns.compile(r"\bGaonate$"),
     _re_for_patterns.compile(r"^\d"),                            # year-prefixed events
     _re_for_patterns.compile(r"^Baraita\b"),                     # rabbinic text articles
-    _re_for_patterns.compile(r"^Beit "),                         # "House of X" schools / institutions
-    _re_for_patterns.compile(r"^Bnei "),                         # "Sons of X" collectives
     _re_for_patterns.compile(r"^Sefer "),                        # "Book of X" rabbinic works
     _re_for_patterns.compile(r"^Midrash "),                      # midrashic works
     _re_for_patterns.compile(r"^Targum "),                       # Targum works

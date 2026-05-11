@@ -40,7 +40,6 @@ Only **Jewish/Israelite** figures are included. The scraper drops non-name entri
 - **Non-Jewish religious / mythological figures** — Zoroaster, Mazdak, Tiresias, etc.
 - **Topic articles, books, lists, events** — `List of …`, `Book of …`, `Tomb of …`, `Binding of Isaac`, `Reconciliation of Jacob with Esau`, `Cyrus the Great in the Bible`, etc.
 - **Liturgical / classical texts** — Mishnah, Tosefta, Baraita on the …, Birkat haMinim, Targum …
-- **Schools / dynasties / collectives** — Beit Gamliel, Bnei Bathyra, Hillel and Shammai, etc.
 - **Tribes / nations / places** — Ammonites, Hittites, Babylon, Edom, Egypt, Hebron, …
 - **Modern events** — anything starting with a year (e.g. "2021 Meron crowd crush")
 
@@ -52,35 +51,7 @@ The exact filter is in [`scrape.py`](scrape.py) under `NON_NAME_TITLES` and `NON
 - [`names_extended.csv`](names_extended.csv) — the data, sorted alphabetically by term.
 - [`scrape.py`](scrape.py) — the scraper. Idempotent and cache-aware; safe to re-run.
 
-## Regenerating the data
-
-```sh
-pip install requests
-python -u scrape.py
-```
-
-The script runs in six phases, each cached to `cache/` as JSON so subsequent runs only redo what's necessary:
-
-1. **Category members** — fetches members of each seed category (and one level of subcategories where `expand=True`) from `en.wikipedia.org` and `he.wikipedia.org`.
-2. **Title → QID resolution** — maps each Wikipedia title to a Wikidata Q-ID via `prop=pageprops|ppprop=wikibase_item` (handles redirects + normalization).
-3. **Dedup by QID** — merges entries that appear in multiple seed categories.
-4. **Wikidata entity fetch** — batched `wbgetentities` calls (labels, sitelinks, claims) for each Q-ID.
-5. **Referenced-entity labels** — resolves QIDs cited in P22/P1066/P802/P19/P20 to display labels.
-6. **Filter + write** — applies the non-name filter, writes `names_extended.csv`, and bakes the CSV into `index.html`.
-
-Delete `cache/` to force a full refresh from Wikimedia.
-
-### Adjusting scope
-
-- **Add a new source category** — append a `SEED` to the `SEEDS` list in `scrape.py`. Set `expand=True` for umbrella categories (e.g. `Category:Hebrew Bible people` → 30+ Book-by-book subcats).
-- **Block a false-positive name** — add the title to `NON_NAME_TITLES` or extend `NON_NAME_PATTERNS`.
-- **Unblock** — remove from the blocklist. The Wikidata entity is still cached, so the re-run is fast.
-
-## Rate limits and etiquette
-
-The scraper sends a descriptive `User-Agent` header (per Wikimedia policy), batches title lookups 50-at-a-time, and sleeps ~1s between calls. A full cold scrape touches ~120 category pages and resolves ~1,200 QIDs in roughly 5–10 minutes.
-
 ## License / attribution
 
 - Names, biographical data, and category memberships are sourced from **English and Hebrew Wikipedia** (CC BY-SA 4.0) and **Wikidata** (CC0).
-- Scraper code and HTML viewer in this repository are released under the **MIT License** (see [LICENSE](LICENSE) if present).
+- Scraper code and HTML viewer in this repository are released under the **MIT License**.
