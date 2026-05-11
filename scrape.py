@@ -54,11 +54,11 @@ SEEDS = [
     {"lang": "en", "cat": "Category:Geonim",                       "label": "Geonim"},
     {"lang": "he", "cat": "קטגוריה:גאונים",                       "label": "Geonim"},
     # Rishonim (~1000–1500 CE)
-    {"lang": "en", "cat": "Category:Rishonim",                     "label": "Rishonim",            "expand": True},
-    {"lang": "he", "cat": "קטגוריה:ראשונים",                      "label": "Rishonim",            "expand": True},
+    {"lang": "en", "cat": "Category:Rishonim",                     "label": "Medieval",            "expand": True},
+    {"lang": "he", "cat": "קטגוריה:ראשונים",                      "label": "Medieval",            "expand": True},
     # Medieval Jewish theologians — expand to get century-by-century subcats
-    {"lang": "en", "cat": "Category:Medieval Jewish theologians",  "label": "Medieval Jewish",     "expand": True},
-    {"lang": "en", "cat": "Category:Medieval rabbis",              "label": "Medieval Jewish"},
+    {"lang": "en", "cat": "Category:Medieval Jewish theologians",  "label": "Medieval",     "expand": True},
+    {"lang": "en", "cat": "Category:Medieval rabbis",              "label": "Medieval"},
 ]
 
 # Explicit blocklist of titles that aren't personal names (events, books, lists, tribes, places, themes).
