@@ -1303,14 +1303,22 @@ Biblical,שמרית המואבית,שמרית המואבית,,https://he.wikiped
           return obj;
         });
 
-      const cats = new Set();
+      const catCounts = new Map();
       for (const row of data) {
-        for (const c of row.__categories) cats.add(c);
+        for (const c of row.__categories) {
+          catCounts.set(c, (catCounts.get(c) || 0) + 1);
+        }
       }
-      for (const c of Array.from(cats).sort()) {
+      // Annotate the existing "All Categories" option with the grand total
+      const allOpt = categoryFilter.querySelector('option[value=""]');
+      if (allOpt) allOpt.textContent = `All Categories (${data.length.toLocaleString()})`;
+      // Order options by row count descending, breaking ties alphabetically
+      const ordered = Array.from(catCounts.entries())
+        .sort((a, b) => (b[1] - a[1]) || a[0].localeCompare(b[0]));
+      for (const [c, n] of ordered) {
         const opt = document.createElement('option');
         opt.value = c;
-        opt.textContent = c;
+        opt.textContent = `${c} (${n.toLocaleString()})`;
         categoryFilter.appendChild(opt);
       }
 
