@@ -138,6 +138,10 @@ NON_NAME_TITLES = {
     # Moabite / Ammonite:
     "Balak", "Eglon", "Mesha",
     "Nahash of Ammon", "Hanun", "Shobi", "Baalis",
+    # Amorite kings:
+    "Sihon", "Og",
+    # Persian official from Ezra:
+    "Tattenai",
     # Edomite:
     "Hadad (Bible)", "Hadad the Edomite",
     # Aramean / Syrian:
@@ -217,6 +221,19 @@ NON_NAME_TITLES = {
     "יואל ואביה בני שמואל",     # Joel and Abijah, Samuel's sons — pair article
     "ישיבת רשב\"י",             # "Yeshiva of Rashbi" — institution / place
     "מיילדות במקרא",            # "Midwifery in the Bible" — topic article
+    # Topic / event / text / place entries (mixed EN and HE):
+    "Ziph",                     # Place name in Judah
+    "Togarmah",                 # Son of Gomer (Table of Nations) — non-Israelite founder
+    "Tiras",                    # Son of Japheth (Table of Nations) — non-Israelite founder
+    "The ancient city of Tiberias",  # Place
+    "Ten Martyrs",              # Collective event
+    "Sifre to Deuteronomy",     # Rabbinic text
+    "Mekhilta de-Rabbi Shimon", # Rabbinic text
+    "ל\"ג בעומר",                # Lag BaOmer — holiday
+    "דבי רבי עקיבא ודבי רבי ישמעאל",  # "School of R. Akiva and school of R. Ishmael" — collective
+    "ברייתא דרבי עקיבא",         # "Baraita of R. Akiva" — text
+    "ארזי הלבנון",              # "Cedars of Lebanon" — metaphor / Ten-Martyrs piyyut reference
+    "אהבת הגר",                 # "Loving Hagar" — topic/event
 }
 
 # Regex patterns matched against the title to reject likely non-names.
