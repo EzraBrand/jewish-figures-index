@@ -223,8 +223,14 @@ NON_NAME_TITLES = {
     "מיילדות במקרא",            # "Midwifery in the Bible" — topic article
     # Topic / event / text / place entries (mixed EN and HE):
     "Ziph",                     # Place name in Judah
+    "Midian",                   # Midianite nation / region
+    "Lydia",                    # Anatolian kingdom
     "Togarmah",                 # Son of Gomer (Table of Nations) — non-Israelite founder
     "Tiras",                    # Son of Japheth (Table of Nations) — non-Israelite founder
+    # Modern organizations / streets / places named after sages (the sages themselves remain in the index):
+    "Hillel International",
+    "Hillel Street",
+    "Har Hillel",
     "The ancient city of Tiberias",  # Place
     "Ten Martyrs",              # Collective event
     "Sifre to Deuteronomy",     # Rabbinic text
