@@ -193,9 +193,30 @@ NON_NAME_TITLES = {
     "בני משה שמעבר לסמבטיון",   # "Sons of Moses beyond Sambation" — mythical collective
     "בני עבדי שלמה",            # "Sons of Solomon's servants" — collective
     "בני קטורה",                # "Sons of Keturah" — non-Israelite descendants of Abraham
-    "בני רבי חייא",             # "Sons of Rabbi Hiyya" — pair article, individuals indexed separately
     "הפרדס של עקיבא",           # "The orchard of Akiva" — Pardes story, not a person
     "מתו בעטיו של נחש",         # Talmudic phrase "they died only because of the serpent" — aggadic concept
+    # Additional Hebrew topic / event / phrase / foreign-figure entries:
+    "חכמי יבנה ברומא",          # "Sages of Yavneh in Rome" — collective event
+    "חיבור ספר הזוהר",          # "Composition of the Zohar" — event / topic
+    "ואמרתם כה לחי",            # "And you shall say thus to the living" — biblical phrase
+    "השועל והדגים",             # "The fox and the fishes" — aggadic parable
+    "טוב שבגויים הרוג",         # "The best of the gentiles, kill" — Talmudic phrase
+    "הקדשה לנבואה",             # "Consecration to prophecy" — concept
+    "הנבואה במסורת ישראל",      # "Prophecy in Jewish tradition" — topic
+    "הלל לומד תורה",            # "Hillel studies Torah" — aggadic story
+    # Anonymous biblical figures / pair articles / events / topics / non-Israelite kings:
+    "אחימן ששי ותלמי",          # Ahiman, Sheshai, and Talmai — Anakim giants (non-Israelite, triple article)
+    "אם אין אני לי מי לי",      # Hillel's famous saying, not a name
+    "ברית יצחק ואבימלך",        # Covenant of Isaac and Abimelech — event
+    "דוד וישבי",                # David and Ishbi-benob — event
+    "הוהם מלך חברון",           # Hoham king of Hebron — non-Israelite Canaanite king
+    "הורם מלך גזר",             # Horam king of Gezer — non-Israelite Canaanite king
+    "יפיע מלך לכיש",            # Yafia king of Lachish — non-Israelite Canaanite king
+    "הולך בדרכו עקיבא",         # Story-title phrase, not a person
+    "הנביא מבית אל",            # "The prophet from Bethel" — anonymous figure (1 Kings 13)
+    "יואל ואביה בני שמואל",     # Joel and Abijah, Samuel's sons — pair article
+    "ישיבת רשב\"י",             # "Yeshiva of Rashbi" — institution / place
+    "מיילדות במקרא",            # "Midwifery in the Bible" — topic article
 }
 
 # Regex patterns matched against the title to reject likely non-names.
