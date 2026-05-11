@@ -183,6 +183,19 @@ NON_NAME_TITLES = {
     "Debir",        # Canaanite king of Eglon (Joshua 10) / disambiguation page
     "Efron",        # Efron the Hittite (Genesis 23)
     "Elioud",       # Non-canonical figure from Aramaic/extra-biblical Nephilim genealogy
+    # Hebrew-only Wikipedia entries that are events / places / phrases / foreign figures, not personal names:
+    "פרעה",                    # generic title "Pharaoh", here referring to Pharaoh of Moses' time
+    "פראם",                    # non-Israelite figure
+    "סוא מלך מצרים",            # "So, king of Egypt" — foreign king
+    "ענר, אשכול וממרא",         # Non-Israelite allies of Abraham (multi-person article)
+    "על דאטפת אטפוך",           # Talmudic Aramaic phrase ("because you drowned …")
+    "בני הנביאים",              # "Sons of the prophets" — collective
+    "בני משה שמעבר לסמבטיון",   # "Sons of Moses beyond Sambation" — mythical collective
+    "בני עבדי שלמה",            # "Sons of Solomon's servants" — collective
+    "בני קטורה",                # "Sons of Keturah" — non-Israelite descendants of Abraham
+    "בני רבי חייא",             # "Sons of Rabbi Hiyya" — pair article, individuals indexed separately
+    "הפרדס של עקיבא",           # "The orchard of Akiva" — Pardes story, not a person
+    "מתו בעטיו של נחש",         # Talmudic phrase "they died only because of the serpent" — aggadic concept
 }
 
 # Regex patterns matched against the title to reject likely non-names.
@@ -209,6 +222,21 @@ NON_NAME_PATTERNS = [
     _re_for_patterns.compile(r"^Targum "),                       # Targum works
     _re_for_patterns.compile(r"^Pirkei "),                       # Pirkei X works (e.g. Pirkei Avot)
     _re_for_patterns.compile(r"^Halachot "),                     # Halachot collections
+    # Hebrew-language phrase / event / place prefixes (Hebrew-only Wikipedia article titles):
+    _re_for_patterns.compile(r"^מערת "),                          # "Cave of X" — place
+    _re_for_patterns.compile(r"^מלחמת "),                         # "War of X" — event
+    _re_for_patterns.compile(r"^מיתת "),                          # "Death of X" — event
+    _re_for_patterns.compile(r"^מציאת "),                         # "Finding of X" — event
+    _re_for_patterns.compile(r"^נס "),                            # "Miracle of X" — event
+    _re_for_patterns.compile(r"^פיוט "),                          # "Piyyut X" — liturgical work
+    _re_for_patterns.compile(r"^שבעת "),                          # "Seven X" — collective
+    _re_for_patterns.compile(r"^חורבן "),                         # "Destruction of X" — event
+    _re_for_patterns.compile(r"^עקדת "),                          # "Binding of X" — event (Akedat Yitzchak)
+    _re_for_patterns.compile(r"^קריעת "),                         # "Splitting/tearing of X" — event (Kri'at Yam Suf)
+    _re_for_patterns.compile(r"^קבר "),                           # "Grave of X" — place
+    _re_for_patterns.compile(r"^גלות "),                          # "Exile of X" — event
+    _re_for_patterns.compile(r"^הבטחת "),                         # "Promise of X" — event
+    _re_for_patterns.compile(r"^פרשת "),                          # "Parashat X" — Torah portion / episode
 ]
 
 
